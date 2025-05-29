@@ -10,7 +10,7 @@ The app gives a user friendly and easy way to create and manage a summer shoppin
 ![alt text](https://github.com/user-attachments/assets/adf39381-94af-4da9-bc85-f16e95b191c0 "This shows the code working")
 
 # Screen Recording
-File was too big, here is the [recording]([url](https://drive.google.com/file/d/1l28bQhc0XYp5dgRgjGw2YfrabJAhITez/view?usp=sharing))
+File was too big, here is the [recording]([url](https://drive.google.com/file/d/1l28bQhc0XYp5dgRgjGw2YfrabJAhITez/view?usp=sharing)) (go into edit and copy paste the code)
 
 
 # Day 1
