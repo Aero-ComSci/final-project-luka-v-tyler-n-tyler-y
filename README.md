@@ -1,10 +1,10 @@
 # final-project-luka-v-tyler-n-tyler-y
 final-project-luka-v-tyler-n-tyler-y created by GitHub Classroom
 # Who is the Program for?
-This Python shopping list app is made for anyone who wants to make their summer grocery shopping list. It's made for busy people, cooks, and families trying to have good time management.
+This Python shopping list app is made for anyone who wants to order from a summer concession stand. People are able to order what they want online through the online menu. It's made to be time efficient for people that are busy and value their time.
 
 # What does the program do?
-The app gives a user friendly and easy way to create and manage a summer shopping list efficiently. It uses  loops, lists, and functions, it allows users to add, remove, and update items in their list, to make sure they stay organized and get what they only need.
+The app gives a user friendly and easy way to create and manage a summer shopping list efficiently. It uses functions in order to allow the user to press the button and add what they want to their order. It uses dictionaries in order to assign numerical values to each item on the menu. It uses lists to remember which buttons the user clicked for their order. It uses for loops in order to create multiple buttons based off of the items in the menu within the dictionary. The program allows the user to add items to their list based off of the menu, remove items from their order, clear their own order and calculate their total.
 
 # Screenshots
 ![alt text](https://github.com/user-attachments/assets/adf39381-94af-4da9-bc85-f16e95b191c0 "This shows the code working")
