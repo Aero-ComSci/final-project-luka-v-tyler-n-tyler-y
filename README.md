@@ -1,6 +1,7 @@
 # final-project-luka-v-tyler-n-tyler-y
 final-project-luka-v-tyler-n-tyler-y created by GitHub Classroom
-
+# Who is the Program for?
+This Python shopping list app is made for anyone who wants to make their summer grocery shopping list. It's made for busy people, cooks, and families trying to have good time management.
 
 # Day 1
 - We brainstormed our idea: Shopping List
