@@ -12,5 +12,5 @@ The app gives a user friendly and easy way to create and manage a summer shoppin
 
 
 # Day 2
-- We add the loops so it can re-run the entire program over and over to start the next shopping process
+- We add the items to the tkinter code and make sure it can run over and over again
 - We fix any errors we see when running the program 
