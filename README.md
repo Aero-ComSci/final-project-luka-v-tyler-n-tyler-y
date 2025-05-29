@@ -6,6 +6,10 @@ This Python shopping list app is made for anyone who wants to make their summer 
 # What does the program do?
 The app gives a user friendly and easy way to create and manage a summer shopping list efficiently. It uses  loops, lists, and functions, it allows users to add, remove, and update items in their list, to make sure they stay organized and get what they only need.
 
+# Screenshots
+![alt text](https://github.com/user-attachments/assets/adf39381-94af-4da9-bc85-f16e95b191c0 "This shows the code working")
+
+
 # Day 1
 - We brainstormed our idea: Shopping List
 - Started our python/tkinter code and created a list to type in the items for your shopping list
