@@ -12,28 +12,36 @@ class Item:
 
 # Prices
 burger_prices = {
-    'Beef Burger': 6.25,
-    'Chicken Burger': 5.25,
-    'Tofu Burger': 5.75,
+    'banana bread': 2,
+    'slice of watermelon': 1.25,
+    'Vanilla Ice Cream': 3,
+    'Chocolate Ice Cream' : 3,
+    'Strawberry Ice Cream' : 3
 }
 
 
 drink_prices = {
-    'Small Drink': 1.00,
-    'Medium Drink': 1.75,
-    'Large Drink': 2.25,
+    'orange juice': 1.00,
+    'lemonade': 1.50,
+    'iced tea': 2.25,
+    'iced coffee' : 2.25
 }
 
 
 fries_prices = {
-    'Small Fries': 1.00,
-    'Medium Fries': 1.50,
-    'Large Fries': 2.00,
+    'cookies': 1.00,
+    'popsicle': 1.25,
+    'chips': 1.50,
+    'corn' : 1.00
 }
 
 
 condiment_prices = {
-    'Ketchup Packet': 0.25
+    'Ketchup Packet': 0.25,
+    'mustard' : 0.25,
+    'relish' : 0.25,
+    'chimoy' : 0.25,
+    'tajin' : 0.25
 }
 
 
@@ -94,7 +102,7 @@ root.geometry("500x800")
 
 
 # Burger 
-burger_frame = tk.LabelFrame(root, text="Burgers", padx=10, pady=10)
+burger_frame = tk.LabelFrame(root, text="Foods", padx=10, pady=10)
 burger_frame.pack(fill="x", padx=10, pady=5)
 
 
@@ -112,7 +120,7 @@ for drink, price in drink_prices.items():
 
 
 # Fries
-fries_frame = tk.LabelFrame(root, text="Fries", padx=10, pady=10)
+fries_frame = tk.LabelFrame(root, text="snacks", padx=10, pady=10)
 fries_frame.pack(fill="x", padx=10, pady=5)
 
 
