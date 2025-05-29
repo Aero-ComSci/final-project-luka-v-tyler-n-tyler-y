@@ -1,35 +1,154 @@
 import tkinter as tk
 
-shopping_list=[]
 
-window = tk.Tk()
-window.title = "Shopping List"
-window.geometry("600x400")
-shoppinglabel = tk.Label(window,text="Shopping List")
-shoppinglistlabel = tk.Label(window, text=f"{shopping_list}")
-add_item = tk.Entry(window)
+from dataclasses import dataclass
 
 
-def hasnumber(text):
-    split_parts = text.strip().split(" ", 1)
-    if len(split_parts) == 2 and split_parts[0].isdigit():
-        quantity = int(split_parts[0])
-        item = split_parts[1].strip()
-    else:
-        quantity = 1
-        item.strip()
-    return item, quantity
-
-def add_clicked():
-    global shopping_list
-    shopping_list.append(add_item.get().strip())
+@dataclass
+class Item:
+    name: str
+    price: float
 
 
-addbutton = tk.Button(window, text = "Add", command=add_clicked)
+# Prices
+burger_prices = {
+    'Beef Burger': 6.25,
+    'Chicken Burger': 5.25,
+    'Tofu Burger': 5.75,
+}
 
-shoppinglabel.pack()
-shoppinglistlabel.pack()
-addbutton.pack()
-add_item.pack()
-window.mainloop()
+
+drink_prices = {
+    'Small Drink': 1.00,
+    'Medium Drink': 1.75,
+    'Large Drink': 2.25,
+}
+
+
+fries_prices = {
+    'Small Fries': 1.00,
+    'Medium Fries': 1.50,
+    'Large Fries': 2.00,
+}
+
+
+condiment_prices = {
+    'Ketchup Packet': 0.25
+}
+
+
+# list
+order = []
+
+
+# Functions
+def add_item(name, price):
+    def click():
+        order.append(Item(name, price))
+        update_order_list()
+    return click
+
+
+def remove_item():
+    selected = order_list.curselection()
+    if selected:
+        index = selected[0]
+        del order[index]
+        update_order_list()
+
+
+def clear_order():
+    order.clear()
+    update_order_list()
+    total_label.config(text="Total: $0.00")
+
+
+def update_order_list():
+    order_list.delete(0, tk.END)
+    for item in order:
+        order_list.insert(tk.END, item.name)
+
+
+def submit_order():
+    total = sum(item.price for item in order)
+
+    # count burgers
+    burger_count = sum(1 for item in order if item.name in burger_prices)
+    drink_count = sum(1 for item in order if item.name in drink_prices)
+    fries_count = sum(1 for item in order if item.name in fries_prices)
+
+    #find the lowest number to make it a discount
+    combo = min(burger_count, drink_count, fries_count)
+
+    #combo itself
+    total = total - combo * 1.00 
+
+    #make the total stop at 2 decimals
+    total_label.config(text=f"Total: ${total:.2f}")
+
+
+# GUI 
+root = tk.Tk()
+root.title("Order Up!")
+root.geometry("500x800")
+
+
+# Burger 
+burger_frame = tk.LabelFrame(root, text="Burgers", padx=10, pady=10)
+burger_frame.pack(fill="x", padx=10, pady=5)
+
+
+for burger, price in burger_prices.items():
+    tk.Button(burger_frame, text=f"{burger} (${price})", command=add_item(burger, price)).pack(side='left', padx=5)
+
+
+# Drink 
+drink_frame = tk.LabelFrame(root, text="Drinks", padx=10, pady=10)
+drink_frame.pack(fill="x", padx=10, pady=5)
+
+
+for drink, price in drink_prices.items():
+    tk.Button(drink_frame, text=f"{drink} (${price})" , command=add_item(drink, price)).pack(side='left', padx=5)
+
+
+# Fries
+fries_frame = tk.LabelFrame(root, text="Fries", padx=10, pady=10)
+fries_frame.pack(fill="x", padx=10, pady=5)
+
+
+for fries, price in fries_prices.items():
+    tk.Button(fries_frame, text=f"{fries} (${price})", command=add_item(fries, price)).pack(side='left', padx=5)
+
+
+# condiments
+condiments_frame = tk.LabelFrame(root, text="Condiments Packets", padx=10, pady=10)
+condiments_frame.pack(fill="x", padx=10, pady=5)
+
+
+for condiments, price in condiment_prices.items():
+    tk.Button(condiments_frame, text=f"{condiments} (${price})", command=add_item(condiments, price)).pack(padx=5, side="left")
+
+
+# Order List
+list_frame = tk.LabelFrame(root, text="Current Order", padx=10, pady=10)
+list_frame.pack(fill="both", expand=True, padx=10, pady=10)
+
+
+order_list = tk.Listbox(list_frame, width=50, height=15)
+order_list.pack()
+
+
+#Buttons
+tk.Button(root, text="Remove Selected Item", bg="red", fg="white", command=remove_item).pack(pady=5)
+tk.Button(root, text="Clear Order", bg="orange", fg="black", command=clear_order).pack(pady=5)
+tk.Button(root, text="Submit Order", font=("Arial", 14), bg="green", fg="white", command=submit_order).pack(pady=10)
+
+
+# Total Label
+total_label = tk.Label(root, text="Total: $0.00", font=("Arial", 16))
+total_label.pack(pady=10)
+
+
+root.mainloop()
+
 
