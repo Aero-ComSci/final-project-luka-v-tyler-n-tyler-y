@@ -16,7 +16,8 @@ burger_prices = {
     'slice of watermelon': 1.25,
     'Vanilla Ice Cream': 3,
     'Chocolate Ice Cream' : 3,
-    'Strawberry Ice Cream' : 3
+    'Strawberry Ice Cream' : 3,
+    'drumstick' : 1.00
 }
 
 
